@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+int f(){
+  return 5;
+}
+int main(void) {
+  int *pv;
+  int i = 7;
+  pv = &i;
+  printf("%d\n", *pv);
+  printf("%ld\n", (long int)&i);
+  printf("%ld\n", (long int)&*pv);
+  (pv)++;
+  printf("%ld\n", (long int)&*pv);
+  pv = (void*)&f;
+  printf("%d\n", *pv);
+  return 0;
+}
